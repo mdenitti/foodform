@@ -1,0 +1,86 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Preferences Survey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="progress mb-4">
+            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+        </div>
+        
+        <!-- Page 1: Basic Information -->
+        <div class="form-page" id="page1">
+            <h2>Basic Information</h2>
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <button class="btn btn-primary next-btn">Next</button>
+        </div>
+
+        <!-- Page 2: Dietary Preferences -->
+        <div class="form-page" id="page2" style="display: none;">
+            <h2>Dietary Preferences</h2>
+            <div class="mb-3">
+                <label class="form-label">Dietary Restrictions</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="vegetarian">
+                    <label class="form-check-label" for="vegetarian">Vegetarian</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="vegan">
+                    <label class="form-check-label" for="vegan">Vegan</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gluten-free">
+                    <label class="form-check-label" for="gluten-free">Gluten-Free</label>
+                </div>
+            </div>
+            <button class="btn btn-secondary prev-btn">Previous</button>
+            <button class="btn btn-primary next-btn">Next</button>
+        </div>
+
+        <!-- Page 3: Cuisine Preferences -->
+        <div class="form-page" id="page3" style="display: none;">
+            <h2>Cuisine Preferences</h2>
+            <div class="mb-3">
+                <label for="cuisine-type" class="form-label">Favorite Cuisine Types</label>
+                <select multiple class="form-control" id="cuisine-type">
+                    <option value="italian">Italian</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="indian">Indian</option>
+                    <option value="chinese">Chinese</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="spice-level" class="form-label">Preferred Spice Level (1-5)</label>
+                <input type="range" class="form-range" id="spice-level" min="1" max="5">
+            </div>
+            <button class="btn btn-secondary prev-btn">Previous</button>
+            <button class="btn btn-primary next-btn">Next</button>
+        </div>
+
+        <!-- Page 4: Summary -->
+        <div class="form-page" id="page4" style="display: none;">
+            <h2>Summary</h2>
+            <div id="summary-content"></div>
+            <button class="btn btn-secondary prev-btn">Previous</button>
+            <button class="btn btn-success" id="submit-btn">Submit Enquiry</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
